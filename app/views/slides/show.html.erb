@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag @slide.picture.url(:medium) %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @slide.name %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @slide.comment %>
+</p>
+
+<p>
+  <strong>Welcome:</strong>
+  <%= @slide.welcome %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @slide.start %>
+</p>
+
+<p>
+  <strong>End:</strong>
+  <%= @slide.end %>
+</p>
+
+<%= link_to 'Edit', edit_slide_path(@slide) %> |
+<%= link_to 'Back', slides_path %>

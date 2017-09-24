@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Slides</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Comment</th>
+      <th>Welcome</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Now</th>
+      <th>Thumbnail</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @slides.each do |slide| %>
+      <tr>
+        <td><%= slide.name %></td>
+        <td><%= slide.comment %></td>
+        <td><% if slide.welcome %>
+          <img src="/assets/ico/yes.png" style="height: 25px; width:25px;">
+        <% end %></td>
+        <td><%= slide.start %></td>
+        <td><%= slide.end %></td>
+        <td><% if (@day >= slide.start.to_datetime) and (@day <= slide.end.to_datetime) %>
+          <img src="/assets/ico/yes.png" style="height: 25px; width:25px;">
+        <% end %></td>
+        <td><%= image_tag slide.picture.url(:thumb) %></td>
+        <td><div class='btn-group'>
+          <%= link_to image_tag("/assets/ico/glasses.svg", height: '24', width: '24') + " Show", slide, class: "btn btn-small btn-info" %>
+          <%= link_to image_tag("/assets/ico/pencil.svg", height: '24', width: '24') + " Edit", edit_slide_path(slide), class: "btn btn-small btn-primary" %>
+          <%= link_to image_tag("/assets/ico/trash.svg", height: '24', width: '24') + " Destroy", slide, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-small btn-danger" %>
+        </div></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to image_tag("/assets/ico/add.svg", height: '24', width: '24') + " New Slide", new_slide_path, :method => :get, class: "btn btn-small btn-success" %>

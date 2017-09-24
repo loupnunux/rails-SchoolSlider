@@ -1,0 +1,136 @@
+<div class='title'>Les anniversaires</div>
+<p>
+
+<%
+time = Time.new
+if time.wday == 1
+  a = 0
+elsif time.wday == 2
+  a = -1
+elsif time.wday == 3
+  a = -2
+elsif time.wday == 4
+  a = -3
+elsif time.wday == 5
+  a = -4
+elsif time.wday == 6
+  a = -5
+elsif time.wday == 0
+  a = -6
+end
+
+monday = time + (a*60*60*24)
+tuesday = time + ((a+1)*60*60*24)
+wednesday = time + ((a+2)*60*60*24)
+thurstday = time + ((a+3)*60*60*24)
+friday = time + ((a+4)*60*60*24)
+saturday = time + ((a+5)*60*60*24)
+sunday = time + ((a+6)*60*60*24)
+%>
+
+<table>
+    <thead>
+    <tr>
+      <th colspan="1"><!--Lundi-->
+        Lundi<br><%= monday.to_s.split(' ')[0] %>
+      </th>
+      <th colspan="1"><!--Mardi-->
+        Mardi<br><%= tuesday.to_s.split(' ')[0] %>
+      </th>
+      <th colspan="1"><!--Mercredi-->
+        Mercredi<br><%= wednesday.to_s.split(' ')[0] %>
+      </th>
+      <th colspan="1"><!--Jeudi-->
+        Jeudi<br><%= thurstday.to_s.split(' ')[0] %>
+      </th>
+      <th colspan="1"><!--Vendredi-->
+        Vendredi<br><%= friday.to_s.split(' ')[0] %>
+      </th>
+      <th colspan="1"><!--Samedi-->
+        Samedi<br><%= saturday.to_s.split(' ')[0] %>
+      </th>
+      <th colspan="1"><!--Dimanche-->
+        Dimanche<br><%= sunday.to_s.split(' ')[0] %>
+      </th>
+      <!--<th colspan="3"></th>-->
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><!--Lundi-->
+        <% @students.each do |student| %>
+          <% if monday.to_s.split(' ')[0].split('-')[1] == student.birth.to_s.split(' ')[0].split('-')[1]
+               if monday.to_s.split(' ')[0].split('-')[2] == student.birth.to_s.split(' ')[0].split('-')[2] %>
+                 <%= student.name.upcase %>
+                 <%= student.first_name.titleize[0] %>.<br>
+          <%   end
+             end %>
+        <% end %>
+      </td>
+      <td><!--Mardi-->
+        <% @students.each do |student| %>
+          <% if tuesday.to_s.split(' ')[0].split('-')[1] == student.birth.to_s.split(' ')[0].split('-')[1]
+               if tuesday.to_s.split(' ')[0].split('-')[2] == student.birth.to_s.split(' ')[0].split('-')[2] %>
+                 <%= student.name.upcase %>
+                 <%= student.first_name.titleize[0] %>.<br>
+          <%   end
+             end %>
+        <% end %>
+      </td>
+      <td><!--Mercredi-->
+        <% @students.each do |student| %>
+          <% if wednesday.to_s.split(' ')[0].split('-')[1] == student.birth.to_s.split(' ')[0].split('-')[1]
+               if wednesday.to_s.split(' ')[0].split('-')[2] == student.birth.to_s.split(' ')[0].split('-')[2] %>
+                 <%= student.name.upcase %>
+                 <%= student.first_name.titleize[0] %>.<br>
+          <%   end
+             end %>
+        <% end %>
+      </td>
+      <td><!--Jeudi-->
+        <% @students.each do |student| %>
+          <% if thurstday.to_s.split(' ')[0].split('-')[1] == student.birth.to_s.split(' ')[0].split('-')[1]
+               if thurstday.to_s.split(' ')[0].split('-')[2] == student.birth.to_s.split(' ')[0].split('-')[2] %>
+                 <%= student.name.upcase %>
+                 <%= student.first_name.titleize[0] %>.<br>
+          <%   end
+             end %>
+        <% end %>
+      </td>
+      <td><!--Vendredi-->
+        <% @students.each do |student| %>
+          <% if friday.to_s.split(' ')[0].split('-')[1] == student.birth.to_s.split(' ')[0].split('-')[1]
+               if friday.to_s.split(' ')[0].split('-')[2] == student.birth.to_s.split(' ')[0].split('-')[2] %>
+                 <%= student.name.upcase %>
+                 <%= student.first_name.titleize[0] %>.<br>
+          <%   end
+             end %>
+        <% end %>
+      </td>
+      <td><!--Samedi-->
+        <% @students.each do |student| %>
+          <% if saturday.to_s.split(' ')[0].split('-')[1] == student.birth.to_s.split(' ')[0].split('-')[1]
+               if saturday.to_s.split(' ')[0].split('-')[2] == student.birth.to_s.split(' ')[0].split('-')[2] %>
+                 <%= student.name.upcase %>
+                 <%= student.first_name.titleize[0] %>.<br>
+          <%   end
+             end %>
+        <% end %>
+      </td>
+      <td><!--Dimanche-->
+        <% @students.each do |student| %>
+          <% if sunday.to_s.split(' ')[0].split('-')[1] == student.birth.to_s.split(' ')[0].split('-')[1]
+               if sunday.to_s.split(' ')[0].split('-')[2] == student.birth.to_s.split(' ')[0].split('-')[2] %>
+                 <%= student.name.upcase %>
+                 <%= student.first_name.titleize[0] %>.<br>
+          <%   end
+             end %>
+        <% end %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+</p>

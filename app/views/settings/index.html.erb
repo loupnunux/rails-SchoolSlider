@@ -1,0 +1,37 @@
+<h1>Settings</h1>
+
+<%= form_tag "/settings", method: "patch" do %>
+  <h2>General</h2>
+  <p>
+  Site Name : <input type="string" name="site_name" value="<%= @settings.site_name %>" />
+  <br>
+  Message d'acceuil : <textarea type="text" class="form-control" rows="3" name="slider_message"><%= @settings.slider_message %></textarea>
+  <br>
+  </p>
+
+  <h2>SlideShow</h2>
+  <p>
+  Interval : <input type="integer" name="slider_interval" value="<%= @settings.slider_interval %>" /> seconde(s)
+  <br>
+
+  <!-- Event -->
+  <% if @settings.slider_event == true %>
+    <input type="checkbox" name="slider_event" value='true' checked='checked' />
+  <% else %>
+    <input type="checkbox" name="slider_event" value='true' />
+  <% end %> Afficher les événements
+  <br>
+
+  <!-- Birthday -->
+  <% if @settings.slider_birthday == true %>
+    <input type="checkbox" name="slider_birthday" value='true' checked='checked' />
+  <% else %>
+    <input type="checkbox" name="slider_birthday" value='true' />
+  <% end %> Afficher les anniversaires
+  <br>
+
+  </p>
+
+  <br>
+  <input type="submit" value="Mettre à jour" />
+<% end %>

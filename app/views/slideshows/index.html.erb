@@ -1,0 +1,54 @@
+<div class="slideshows">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="<%= @settings.slider_interval %>000">
+
+
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <% n = 1 %>
+      <% while n < @slide_number %>
+        <li data-target="#myCarousel" data-slide-to="<%= n %>"></li>
+        <% n += 1 %>
+      <% end %>
+    </ol>
+
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item page active">
+        <hgroup>
+          <%= render partial: 'slideshows/welcome' %>
+        </hgroup>
+      </div>
+
+      <% if @settings.slider_event %>
+        <div class="item event">
+          <hgroup>
+            <%= render partial: 'slideshows/event' %>
+          </hgroup>
+        </div>
+      <% end %>
+
+      <% if @settings.slider_birthday %>
+        <div class="item week_birthday">
+          <div class="birthday">
+            <hgroup>
+              <%= render partial: 'slideshows/week_birthday' %>
+            </hgroup>
+          </div>
+        </div>
+      <% end %>
+
+      <% @slides.each do |s| %>
+        <% if (@day >= s.start.to_datetime) and (@day <= s.end.to_datetime) %>
+          <div class="item slides">
+            <div class="image">
+              <img src="<%= s.picture.url(:full, timestamp: false) %>" style="height: 100vh; width:100vw;">
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div>
+</div>

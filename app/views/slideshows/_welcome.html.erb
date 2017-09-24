@@ -1,0 +1,8 @@
+<div class='title'><%= @settings.slider_message %></div><br><br><br>
+<% @slides.each do |s| %>
+  <% if (s.welcome) %>
+    <div class="welcome_image">
+    <img src="<%= s.picture.url(:large, timestamp: false) %>" style="height: 100%; width:100%;">
+    </div>
+  <% end %>
+<% end %>
