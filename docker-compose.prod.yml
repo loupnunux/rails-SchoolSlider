@@ -1,0 +1,13 @@
+version: "2"
+
+services:
+  app:
+    build: .
+    env_file: .env
+    environment:
+      RAILS_ENV: production
+    volumes:
+      - /mnt/school_slider/db/production:/usr/src/app/db/production
+      - /mnt/school_slider/public/system:/usr/src/app/public/system
+    ports:
+      - "3000:3000"

@@ -25,3 +25,25 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+
+### Developpement - In shell
+$ pacman -Syu git ruby nodejs imagemagick
+$ git pull
+$ gem install rails
+$ bundle install
+$ rake db:create db:migrate
+$ rails s
+
+
+### Production - Docker
+# Veriffier les informations du docker-compose.prod.yml
+$ docker-compose -f docker-compose.prod.yml build app
+$ docker-compose -f docker-compose.prod.yml run --rm app rake db:create db:migrate
+$ docker run --rm schoolslider_app rake secret
+# reporter le secret dans .env variable 'SECRET_KEY_BASE'
+$ docker-compose -f docker-compose.prod.yml up app
+
+
+
