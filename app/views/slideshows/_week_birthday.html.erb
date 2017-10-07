@@ -32,25 +32,25 @@ sunday = time + ((a+6)*60*60*24)
     <thead>
     <tr>
       <th colspan="1"><!--Lundi-->
-        Lundi<br><%= monday.to_s.split(' ')[0] %>
+        Lundi<br><%= monday.strftime("%d-%m-%Y") %>
       </th>
       <th colspan="1"><!--Mardi-->
-        Mardi<br><%= tuesday.to_s.split(' ')[0] %>
+        Mardi<br><%= tuesday.strftime("%d-%m-%Y") %>
       </th>
       <th colspan="1"><!--Mercredi-->
-        Mercredi<br><%= wednesday.to_s.split(' ')[0] %>
+        Mercredi<br><%= wednesday.strftime("%d-%m-%Y") %>
       </th>
       <th colspan="1"><!--Jeudi-->
-        Jeudi<br><%= thurstday.to_s.split(' ')[0] %>
+        Jeudi<br><%= thurstday.strftime("%d-%m-%Y") %>
       </th>
       <th colspan="1"><!--Vendredi-->
-        Vendredi<br><%= friday.to_s.split(' ')[0] %>
+        Vendredi<br><%= friday.strftime("%d-%m-%Y") %>
       </th>
       <th colspan="1"><!--Samedi-->
-        Samedi<br><%= saturday.to_s.split(' ')[0] %>
+        Samedi<br><%= saturday.strftime("%d-%m-%Y") %>
       </th>
       <th colspan="1"><!--Dimanche-->
-        Dimanche<br><%= sunday.to_s.split(' ')[0] %>
+        Dimanche<br><%= sunday.strftime("%d-%m-%Y") %>
       </th>
       <!--<th colspan="3"></th>-->
     </tr>

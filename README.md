@@ -43,8 +43,9 @@ $ sudo mkdir -p /mnt/docker/school_slider/db/production
 $ sudo mkdir -p /mnt/docker/school_slider/public/system
 
 $ docker-compose -f docker-compose.prod.yml build app
-$ docker-compose -f docker-compose.prod.yml run --rm app rake db:create db:migrate
-$ docker run --rm schoolslider_app rake secret
+$ docker-compose -f docker-compose.prod.yml run --rm app rake assets:precompile
+$ docker-compose -f docker-compose.prod.yml run --rm app rake db:create db:migrate assets:precompile
+$ docker run --rm railsschoolslider_app rake secret
 # reporter le secret dans .env variable 'SECRET_KEY_BASE'
 $ docker-compose -f docker-compose.prod.yml up app
 
