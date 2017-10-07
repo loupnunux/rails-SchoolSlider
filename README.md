@@ -39,6 +39,9 @@ $ rails s
 
 ### Production - Docker
 # Veriffier les informations du docker-compose.prod.yml
+$ sudo mkdir -p /mnt/docker/school_slider/db/production
+$ sudo mkdir -p /mnt/docker/school_slider/public/system
+
 $ docker-compose -f docker-compose.prod.yml build app
 $ docker-compose -f docker-compose.prod.yml run --rm app rake db:create db:migrate
 $ docker run --rm schoolslider_app rake secret

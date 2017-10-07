@@ -2,7 +2,7 @@ FROM ruby:2.3
 
 RUN apt-get update -yqq \
   && apt-get install -yqq --no-install-recommends \
-    postgresql-client nodejs imagemagick net-tools\
+    nodejs imagemagick net-tools\
     && rm -rf /var/lib/apt/lists
 
 WORKDIR /usr/src/app
