@@ -2,5 +2,5 @@
 
 <%= render 'form', slide: @slide %>
 
-<%= link_to 'Show', @slide %> |
-<%= link_to 'Back', slides_path %>
+<%= link_to image_tag("/assets/ico/glasses.svg", height: '24', width: '24') + " Show", @slide, class: "btn btn-small btn-primary" %>
+<%= link_to image_tag("/assets/ico/back.png", height: '24', width: '24') + " Back", slides_path, class: "btn btn-small btn-warning" %>

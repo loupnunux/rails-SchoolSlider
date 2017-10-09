@@ -29,6 +29,8 @@ class SlidesController < ApplicationController
 
     respond_to do |format|
       if @slide.save
+        update_welcome @slide
+
         format.html { redirect_to @slide, notice: 'Slide was successfully created.' }
         format.json { render :show, status: :created, location: @slide }
       else
@@ -43,6 +45,8 @@ class SlidesController < ApplicationController
   def update
     respond_to do |format|
       if @slide.update(slide_params)
+        update_welcome @slide
+
         format.html { redirect_to @slide, notice: 'Slide was successfully updated.' }
         format.json { render :show, status: :ok, location: @slide }
       else
@@ -66,6 +70,16 @@ class SlidesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_slide
       @slide = Slide.find(params[:id])
+    end
+
+    def update_welcome (slide)
+      @slides = Slide.all
+      @slides.each do |s|
+        if (s != @slide) and slide[:welcome] == true
+          s[:welcome] = false
+          s.save
+        end
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

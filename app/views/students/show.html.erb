@@ -20,5 +20,5 @@
   <%= @student.birth %>
 </p>
 
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+<%= link_to image_tag("/assets/ico/pencil.svg", height: '24', width: '24') + " Edit", edit_student_path(@student), class: "btn btn-small btn-primary" %>
+<%= link_to image_tag("/assets/ico/back.png", height: '24', width: '24') + " Back", students_path, class: "btn btn-small btn-warning" %>

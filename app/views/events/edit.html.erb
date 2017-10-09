@@ -2,5 +2,5 @@
 
 <%= render 'form', event: @event %>
 
-<%= link_to 'Show', @event %> |
-<%= link_to 'Back', events_path %>
+<%= link_to image_tag("/assets/ico/glasses.svg", height: '24', width: '24') + " Show", @event, class: "btn btn-small btn-primary" %>
+<%= link_to image_tag("/assets/ico/back.png", height: '24', width: '24') + " Back", events_path, class: "btn btn-small btn-warning" %>

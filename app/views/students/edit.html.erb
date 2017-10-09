@@ -2,5 +2,5 @@
 
 <%= render 'form', student: @student %>
 
-<%= link_to 'Show', @student %> |
-<%= link_to 'Back', students_path %>
+<%= link_to image_tag("/assets/ico/glasses.svg", height: '24', width: '24') + " Show", @student, class: "btn btn-small btn-primary" %>
+<%= link_to image_tag("/assets/ico/back.png", height: '24', width: '24') + " Back", students_path, class: "btn btn-small btn-warning" %>
