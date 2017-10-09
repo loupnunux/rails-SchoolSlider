@@ -50,3 +50,19 @@ $ docker-compose -f docker-compose.prod.yml up app
 
 
 
+
+### Update - Docker
+$ git pull
+$ docker-compose -f docker-compose.prod.yml build app
+$ docker-compose -f docker-compose.prod.yml stop app
+$ docker-compose -f docker-compose.prod.yml rm app
+$ docker-compose -f docker-compose.prod.yml run --rm app rake db:migrate assets:precompile
+$ docker-compose -f docker-compose.prod.yml up app
+
+
+
+
+
+
+
+
