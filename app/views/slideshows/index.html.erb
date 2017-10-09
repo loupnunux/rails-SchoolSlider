@@ -1,5 +1,5 @@
 <div class="slideshows">
-  <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="<%= @settings.slider_interval %>000">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
 
     <!-- Indicators -->
@@ -45,6 +45,9 @@
             <div class="image">
               <img src="<%= s.picture.url(:full, timestamp: false) %>" style="height: 100vh; width:100vw;">
             </div>
+            <div class="carousel-caption">
+              <p><div class="comment"><%= s[:comment] %></div></p>
+            </div>
           </div>
         <% end %>
       <% end %>
@@ -52,3 +55,10 @@
 
   </div>
 </div>
+
+<script>
+$(document).ready(function(){
+    // Activate Carousel
+    $("#myCarousel").carousel({interval: <%= @settings.slider_interval %>000, pause: false});
+});
+</script>
