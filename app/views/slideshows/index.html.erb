@@ -1,5 +1,5 @@
 <div class="slideshows">
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="<%= @settings.slider_interval %>000">
 
 
     <!-- Indicators -->
@@ -56,9 +56,11 @@
   </div>
 </div>
 
+<!--
 <script>
 $(document).ready(function(){
     // Activate Carousel
     $("#myCarousel").carousel({interval: <%= @settings.slider_interval %>000, pause: false});
 });
 </script>
+-->

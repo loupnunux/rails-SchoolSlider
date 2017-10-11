@@ -38,31 +38,5 @@ $ rails s
 
 
 ### Production - Docker
-# Veriffier les informations du docker-compose.prod.yml
-$ sudo mkdir -p /mnt/docker/school_slider/db/production
-$ sudo mkdir -p /mnt/docker/school_slider/public/system
-
-$ docker-compose -f docker-compose.prod.yml build app
-$ docker-compose -f docker-compose.prod.yml run --rm app rake db:create db:migrate assets:precompile
-$ docker run --rm railsschoolslider_app rake secret
-# reporter le secret dans .env variable 'SECRET_KEY_BASE'
-$ docker-compose -f docker-compose.prod.yml up app
-
-
-
-
-### Update - Docker
-$ git pull
-$ docker-compose -f docker-compose.prod.yml build app
-$ docker-compose -f docker-compose.prod.yml stop app
-$ docker-compose -f docker-compose.prod.yml rm app
-$ docker-compose -f docker-compose.prod.yml run --rm app rake db:migrate assets:precompile
-$ docker-compose -f docker-compose.prod.yml up app
-
-
-
-
-
-
-
+Voir le depot docker-school_slider
 
