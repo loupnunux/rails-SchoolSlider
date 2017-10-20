@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :users
   resources :events
   resources :slides
   get 'slideshows' => 'slideshows#index'
