@@ -24,7 +24,7 @@ class SlideshowsController < ApplicationController
   def check_saint
     @list_saint = []
     @saints.each do |s|
-      if (@day.to_datetime.strftime("%M%d") == s.day.to_datetime.strftime("%M%d"))
+      if (@day.to_datetime.strftime("%m-%d") == s.day.to_datetime.strftime("%m-%d"))
         @list_saint << s.name
       end
     end
