@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @saint.day.strftime("%d %B") %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @saint.name %>
+</p>
+
+<%= link_to image_tag("/assets/ico/pencil.svg", height: '24', width: '24') + " Edit", edit_saint_path(@saint), class: "btn btn-small btn-primary" %>
+<%= link_to image_tag("/assets/ico/back.png", height: '24', width: '24') + " Back", saints_path, class: "btn btn-small btn-warning" %>

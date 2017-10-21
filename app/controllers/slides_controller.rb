@@ -85,6 +85,6 @@ class SlidesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def slide_params
-      params.require(:slide).permit(:name, :comment, :start, :end, :welcome, :picture)
+      params.require(:slide).permit(:name, :comment, :start, :end, :welcome, :saint, :picture)
     end
 end

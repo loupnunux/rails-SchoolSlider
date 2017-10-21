@@ -6,6 +6,7 @@ class CreateSlides < ActiveRecord::Migration[5.1]
       t.date :start
       t.date :end
       t.boolean :welcome
+      t.boolean :saint
 
       t.timestamps
     end

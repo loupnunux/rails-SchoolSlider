@@ -37,6 +37,8 @@
 }
 
 
+
+
 .birthday{
   height: 100%;
   width: 100%;
@@ -98,6 +100,27 @@
   margin-right: 25%;
   margin-left: 25%;
 }
+
+
+
+
+
+.saint .wall{
+  position: absolute;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.saint .text{
+  text-align: center;
+  vertical-align: center;
+  position: relative;
+  font-family: "Vampire";
+  font-weight: bold;
+  font-size: 500%;
+  line-height: 250%;
+}
+
 
 
 

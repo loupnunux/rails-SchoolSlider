@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Saints</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>Name</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @saints.order(:day).each do |saint| %>
+      <tr>
+        <td><%= saint.day.strftime("%d %b") %></td>
+        <td><%= saint.name %></td>
+        <td><div class='btn-group'>
+          <%= link_to image_tag("/assets/ico/glasses.svg", height: '24', width: '24') + " Show", saint, class: "btn btn-small btn-info" %>
+          <%= link_to image_tag("/assets/ico/pencil.svg", height: '24', width: '24') + " Edit", edit_saint_path(saint), class: "btn btn-small btn-primary" %>
+          <%= link_to image_tag("/assets/ico/trash.svg", height: '24', width: '24') + " Destroy", saint, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-small btn-danger" %>
+        </div></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to image_tag("/assets/ico/add.svg", height: '24', width: '24') + " New Saint", new_saint_path, :method => :get, class: "btn btn-small btn-success" %>

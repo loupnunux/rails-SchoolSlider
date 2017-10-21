@@ -1,0 +1,27 @@
+<%= form_with(model: saint, local: true) do |form| %>
+  <% if saint.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(saint.errors.count, "error") %> prohibited this saint from being saved:</h2>
+
+      <ul>
+      <% saint.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :day %>
+    <%= form.date_select :day, id: :saint_day, :default => { year: 2000 }, :discard_year => true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :saint_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

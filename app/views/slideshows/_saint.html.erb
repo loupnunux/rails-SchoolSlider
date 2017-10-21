@@ -1,0 +1,39 @@
+<div class="saint">
+
+
+
+  <div class="wall">
+  <% @wall = []
+  @slides.each do |wallpaper|
+    if (wallpaper.saint)
+      @wall << wallpaper.id
+    end
+  end %>
+
+  <img src="<%= @slides[@wall[rand(@wall.size)].to_i - 1].picture.url(:full, timestamp: false) %>" style="height: 100vh; width:100vw;">
+
+</div>
+
+
+  <div class='title'>
+    Bonne fête
+  </div>
+
+  <div class="text">
+
+    Aujourd'hui,<br>
+    <%= @week[Time.now.strftime("%w").to_i] %> <%= Time.now.strftime("%d %B") %>,<br>
+    nous fêtons :<br>
+    <% @list_saint.each do |saint| %>
+      <% if saint == @list_saint.first %>
+        les <%= saint %>
+      <% elsif saint == @list_saint.last %>
+        et les <%= saint %>
+      <% else %>
+        , les <%= saint %>
+      <%end%>
+    <% end %>
+
+</div>
+
+</div>

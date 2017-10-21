@@ -21,6 +21,14 @@
         </hgroup>
       </div>
 
+      <% if @list_saint.any? %>
+        <div class="item saint">
+          <hgroup>
+            <%= render partial: 'slideshows/saint' %>
+          </hgroup>
+        </div>
+      <% end %>
+
       <% if @settings.slider_event %>
         <div class="item event">
           <hgroup>

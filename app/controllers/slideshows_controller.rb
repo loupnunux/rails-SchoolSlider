@@ -1,6 +1,7 @@
 class SlideshowsController < ApplicationController
   def index
     @students = Student.all
+    @saints = Saint.all
     @events = Event.all.order(:start)
     @settings = Setting.all[0]
     @slides = Slide.all
@@ -17,6 +18,19 @@ class SlideshowsController < ApplicationController
 
     event_sort
     check_slide
+    check_saint
+  end
+
+  def check_saint
+    @list_saint = []
+    @saints.each do |s|
+      if (@day.to_datetime.strftime("%M%d") == s.day.to_datetime.strftime("%M%d"))
+        @list_saint << s.name
+      end
+    end
+    if @list_saint.any?
+      @slide_number += 1
+    end
   end
 
   def check_slide
