@@ -22,7 +22,7 @@
   <div class="text">
 
     Aujourd'hui,<br>
-    <%= @week[Time.now.strftime("%w").to_i] %> <%= Time.now.strftime("%d %B") %>,<br>
+    <%= @week[Time.now.strftime("%w").to_i] %> <%= Time.now.strftime("%d") %> <%= @month[Time.now.strftime("%m").to_i - 1] %>,<br>
     nous fêtons :<br>
     <% @list_saint.each do |saint| %>
       <% if saint == @list_saint.first %>
