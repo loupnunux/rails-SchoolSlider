@@ -22,12 +22,20 @@
 
 <p>
   <strong>Start:</strong>
-  <%= @event.start %>
+  <% if @event.allday == false %>
+    <%= @event.start %>
+  <% else %>
+    -
+  <% end %>
 </p>
 
 <p>
   <strong>End:</strong>
-  <%= @event.end %>
+  <% if @event.allday == false %>
+    <%= @event.end %>
+  <% else %>
+    -
+  <% end %>
 </p>
 
 <%= link_to image_tag("/assets/ico/pencil.svg", height: '24', width: '24') + " Edit", edit_event_path(@event), class: "btn btn-small btn-primary" %>
