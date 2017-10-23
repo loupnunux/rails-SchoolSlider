@@ -28,9 +28,11 @@
 
   <div class="field">
     <%= form.label :allday %>
-    <%= form.check_box :allday, id: :event_allday %>
+    <%= form.check_box :allday, id: :event_allday, :onclick => "hiden();" %><!--onchange-->
   </div>
 
+
+<div id="all_day" >
   <div class="field">
     <%= form.label :start %>
     <%= form.time_select :start, id: :event_start %>
@@ -40,8 +42,22 @@
     <%= form.label :end %>
     <%= form.time_select :end, id: :event_end %>
   </div>
+</div>
+
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+
+<script type="text/javascript">
+  function hiden (){
+  var checkbox = document.getElementById('event_allday');
+  if (checkbox.checked)
+    document.getElementById("all_day").style.display = "none";
+  else
+    document.getElementById("all_day").style.display = "block";
+  }
+  hiden()
+</script>
