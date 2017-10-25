@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171021123019) do
+ActiveRecord::Schema.define(version: 20171024105253) do
 
   create_table "events", force: :cascade do |t|
     t.string "name"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20171021123019) do
     t.boolean "slider_event"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "slider_saint"
   end
 
   create_table "slides", force: :cascade do |t|

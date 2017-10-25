@@ -28,7 +28,7 @@ class SlideshowsController < ApplicationController
         @list_saint << s.name
       end
     end
-    if @list_saint.any?
+    if @list_saint.any? and @settings.slider_saint
       @slide_number += 1
     end
   end

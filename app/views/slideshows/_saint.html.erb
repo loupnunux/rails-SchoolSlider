@@ -12,7 +12,7 @@
 
   <img src="<%= @slides[@wall[rand(@wall.size)].to_i - 1].picture.url(:full, timestamp: false) %>" style="height: 100vh; width:100vw;">
 
-</div>
+  </div>
 
 
   <div class='title'>
@@ -26,14 +26,14 @@
     nous fêtons :<br>
     <% @list_saint.each do |saint| %>
       <% if saint == @list_saint.first %>
-        les <%= saint %>
+        les <div class="txt_saint"><%= saint %></div>
       <% elsif saint == @list_saint.last %>
-        et les <%= saint %>
+        et les <div class="txt_saint"><%= saint %></div>
       <% else %>
-        , les <%= saint %>
+        , les <div class="txt_saint"><%= saint %></div>
       <%end%>
     <% end %>
 
-</div>
+  </div>
 
 </div>

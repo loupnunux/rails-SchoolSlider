@@ -13,6 +13,7 @@ class SettingsController < ApplicationController
     end
     Setting.update slider_birthday: params[:slider_birthday]
     Setting.update slider_event: params[:slider_event]
+    Setting.update slider_saint: params[:slider_saint]
     Setting.update slider_message: params[:slider_message]
     redirect_to "/settings"
   end

@@ -1,3 +1,5 @@
+<meta http-equiv="refresh" content="3600">
+
 <div class="slideshows">
   <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="<%= @settings.slider_interval %>000">
 
@@ -21,7 +23,7 @@
         </hgroup>
       </div>
 
-      <% if @list_saint.any? %>
+      <% if @list_saint.any? and @settings.slider_saint %>
         <div class="item saint">
           <hgroup>
             <%= render partial: 'slideshows/saint' %>
