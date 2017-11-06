@@ -22,6 +22,10 @@ class SlideshowsController < ApplicationController
     event_sort
     check_slide
     check_saint
+
+    path = Rails.public_path
+    system("rm #{path}/#{@settings.url_menu.split('/').last}")
+    system("wget -P #{path} #{@settings.url_menu}")
   end
 
   def check_saint
