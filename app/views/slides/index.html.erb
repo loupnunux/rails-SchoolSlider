@@ -32,8 +32,7 @@
         <td><%= slide.end %></td>
         <td><% if (@day >= slide.start.to_datetime) and (@day <= slide.end.to_datetime) %>
           <img src="/assets/ico/calendar_r.svg" style="height: 25px; width:25px;">
-        <% end %>
-        <% if (@day <= slide.start.to_datetime) and (@day <= slide.end.to_datetime) %>
+        <% elsif (@day <= slide.start.to_datetime) and (@day <= slide.end.to_datetime) %>
           <img src="/assets/ico/calendar_rn.svg" style="height: 25px; width:25px;">
         <% end %></td>
         <td><%= image_tag slide.picture.url(:thumb) %></td>
