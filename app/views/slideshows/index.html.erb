@@ -49,6 +49,16 @@
         </div>
       <% end %>
 
+      <% if @settings.slider_menu %>
+        <div class="item week_menu">
+          <div class="menu">
+            <hgroup>
+              <%= render partial: 'slideshows/week_menu' %>
+            </hgroup>
+          </div>
+        </div>
+      <% end %>
+
       <% @slides.each do |s| %>
         <% if (@day >= s.start.to_datetime) and (@day <= s.end.to_datetime) %>
           <div class="item slides">

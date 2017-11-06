@@ -14,6 +14,14 @@
   Interval : <input type="integer" name="slider_interval" value="<%= @settings.slider_interval %>" /> seconde(s)
   <br>
 
+  <!-- Welcome -->
+  <% if @settings.full_welcome == true %>
+    <input type="checkbox" name="full_welcome" value='true' checked='checked' />
+  <% else %>
+    <input type="checkbox" name="full_welcome" value='true' />
+  <% end %> Page de bienvenue en plein ecran
+  <br>
+
   <!-- Event -->
   <% if @settings.slider_event == true %>
     <input type="checkbox" name="slider_event" value='true' checked='checked' />
@@ -37,9 +45,22 @@
     <input type="checkbox" name="slider_saint" value='true' />
   <% end %> Afficher les fêtes du jour
   <br>
+
+
+  <!-- Menu -->
+  <% if @settings.slider_menu == true %>
+    <input type="checkbox" name="slider_menu" value='true' checked='checked' />
+  <% else %>
+    <input type="checkbox" name="slider_menu" value='true' />
+  <% end %> Afficher le menu ( url du menu : <input type="string" name="url_menu" value="<%= @settings.url_menu %>" /> )
+  <br>
+
+
+
   
   </p>
 
   <br>
   <input type="submit" value="Mettre à jour" />
 <% end %>
+
