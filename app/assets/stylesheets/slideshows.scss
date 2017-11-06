@@ -80,6 +80,8 @@
 }
 
 
+
+
 .page{
   height: 100%;
   width: 100%;
@@ -102,6 +104,8 @@
 }
 
 
+
+
 .menu_img{
   margin-right: 20%;
   margin-left: 20%;
@@ -109,6 +113,25 @@
   width: 100%;
 }
 
+
+.week_menu {
+  margin: 0%;
+  height: 100%;
+  width: 100%;
+  background-size: 100% 100%;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-image: url('/assets/menu.jpg');
+}
+
+.week_menu .title{
+  top: 25px;
+  font-family: "Sketch";
+  font-size: 400%;
+  text-align: center;
+  vertical-align: top;
+  color: #FEFEFE;
+}
 
 .saint .wall{
   position: absolute;
