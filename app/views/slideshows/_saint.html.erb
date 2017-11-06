@@ -10,17 +10,16 @@
     end
   end %>
 
-  <img src="<%= @slides[@wall[rand(@wall.size)].to_i - 1].picture.url(:full, timestamp: false) %>" style="height: 100vh; width:100vw;">
-
+  <% if @wall.any? %>
+    <% wall = rand(@wall.size).to_i - 1 %>
+    <img src="<%= @slides[wall].picture.url(:full, timestamp: false) %>" style="height: 100vh; width:100vw;">
+  <% end %>
   </div>
 
 
-  <div class='title'>
-    Bonne fête
-  </div>
 
   <div class="text">
-
+    <br>
     Aujourd'hui,<br>
     <%= @week[Time.now.strftime("%w").to_i] %> <%= Time.now.strftime("%d") %> <%= @month[Time.now.strftime("%m").to_i - 1] %>,<br>
     nous fêtons :<br>
