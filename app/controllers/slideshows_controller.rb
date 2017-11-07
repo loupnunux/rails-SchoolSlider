@@ -23,9 +23,11 @@ class SlideshowsController < ApplicationController
     check_slide
     check_saint
 
-    path = Rails.public_path
-    system("rm #{path}/#{@settings.url_menu.split('/').last}")
-    system("wget -P #{path} #{@settings.url_menu}")
+    if @settings.slider_menu
+      path = Rails.public_path
+      system("rm #{path}/#{@settings.url_menu.split('/').last}")
+      system("wget -P #{path} #{@settings.url_menu}")
+    end
   end
 
   def check_saint
