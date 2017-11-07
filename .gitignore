@@ -12,6 +12,7 @@
 /db/*/*.sqlite3-journal
 /db/*.sqlite3
 /db/*.sqlite3-journal
+/db/development/*
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -26,3 +27,6 @@
 
 /public/system/slides/pictures/*
 /public/assets
+/public/menu.jpg
+/public/*.pdf
+
