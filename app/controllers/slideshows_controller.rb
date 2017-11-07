@@ -27,6 +27,7 @@ class SlideshowsController < ApplicationController
       path = Rails.public_path
       system("rm #{path}/#{@settings.url_menu.split('/').last}")
       system("wget -P #{path} #{@settings.url_menu}")
+      system("convert -density 600 #{path}/#{@settings.url_menu.split('/').last} #{path}/menu.jpg")
     end
   end
 
