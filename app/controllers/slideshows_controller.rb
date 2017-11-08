@@ -18,6 +18,9 @@ class SlideshowsController < ApplicationController
     if @settings.slider_menu == true
       @slide_number += 1
     end
+    if @settings.slider_meteo == true
+      @slide_number += 1
+    end
 
     event_sort
     check_slide

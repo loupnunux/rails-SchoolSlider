@@ -59,6 +59,14 @@
         </div>
       <% end %>
 
+      <% if @settings.slider_meteo %>
+        <div class="item page">
+          <hgroup>
+            <%= render partial: 'slideshows/meteo' %>
+          </hgroup>
+        </div>
+      <% end %>
+
 
       <% @slides.each do |s| %>
         <% if (@day >= s.start.to_datetime) and (@day <= s.end.to_datetime) %>

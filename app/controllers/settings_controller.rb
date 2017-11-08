@@ -17,6 +17,8 @@ class SettingsController < ApplicationController
     Setting.update slider_saint: params[:slider_saint]
     Setting.update slider_menu: params[:slider_menu]
     Setting.update url_menu: params[:url_menu]
+    Setting.update slider_meteo: params[:slider_meteo]
+    Setting.update meteo_code: params[:meteo_code]
     Setting.update slider_message: params[:slider_message]
     redirect_to "/settings"
   end

@@ -46,13 +46,22 @@
   <% end %> Afficher les fêtes du jour
   <br>
 
-
   <!-- Menu -->
   <% if @settings.slider_menu == true %>
     <input type="checkbox" name="slider_menu" value='true' checked='checked' />
   <% else %>
     <input type="checkbox" name="slider_menu" value='true' />
-  <% end %> Afficher le menu ( url du menu : <input type="string" name="url_menu" value="<%= @settings.url_menu %>" /> )
+  <% end %> Afficher le menu<br>
+  &nbsp;&nbsp;&nbsp;URL du menu : <textarea type="text" class="form-control" rows="1" name="url_menu"><%= @settings.url_menu %></textarea>
+  <br>
+
+  <!-- Meteo -->
+  <% if @settings.slider_meteo== true %>
+    <input type="checkbox" name="slider_meteo" value='true' checked='checked' />
+  <% else %>
+    <input type="checkbox" name="slider_meteo" value='true' />
+  <% end %> Afficher la météo<br>
+  &nbsp;&nbsp;&nbsp;Code à recupérer sur <a href="https://www.tameteo.com/widget/">TaMeteo</a>, faire l'export en image, et récupérer uniquement l'url du 'png' : <textarea type="text" class="form-control" rows="1" name="meteo_code"><%= @settings.meteo_code %></textarea>
   <br>
   
   </p>

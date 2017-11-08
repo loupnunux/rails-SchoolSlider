@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171106115748) do
+ActiveRecord::Schema.define(version: 20171108070159) do
 
   create_table "events", force: :cascade do |t|
     t.string "name"
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 20171106115748) do
     t.boolean "slider_menu"
     t.string "url_menu"
     t.boolean "full_welcome"
+    t.boolean "slider_meteo"
+    t.text "meteo_code"
   end
 
   create_table "slides", force: :cascade do |t|
