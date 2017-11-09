@@ -101,6 +101,7 @@ class SlideshowsController < ApplicationController
     date_menu
     @file_menu = "#{@file_date}-menu.jpg"
     if File.exist?("#{@path}/#{@file_menu}") == false
+      system("rm #{@path}/*-menu.jpg")
       #system("convert -density 600 #{@path}/#{@settings.url_menu.split('/').last} #{@path}/menu.jpg")
       system("convert -density 150 -quality 90 #{@path}/#{@settings.url_menu.split('/').last} #{@path}/#{@file_menu}")
     end
