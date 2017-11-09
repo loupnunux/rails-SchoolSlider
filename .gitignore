@@ -27,6 +27,6 @@
 
 /public/system/slides/pictures/*
 /public/assets
-/public/menu.jpg
+/public/*-menu.jpg
 /public/*.pdf
 

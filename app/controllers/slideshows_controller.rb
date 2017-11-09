@@ -25,13 +25,8 @@ class SlideshowsController < ApplicationController
     event_sort
     check_slide
     check_saint
-
     if @settings.slider_menu
-      path = Rails.public_path
-      system("rm #{path}/#{@settings.url_menu.split('/').last}")
-      system("wget -P #{path} #{@settings.url_menu}")
-    #  system("convert -density 600 #{path}/#{@settings.url_menu.split('/').last} #{path}/menu.jpg")
-      system("convert -density 150 -quality 90 #{path}/#{@settings.url_menu.split('/').last} #{path}/menu.jpg")
+      menu
     end
   end
 
@@ -66,4 +61,48 @@ class SlideshowsController < ApplicationController
     end
   end
 
+
+
+
+  def menu
+    @path = Rails.public_path
+    if File.exist?("#{@path}/#{@settings.url_menu.split('/').last}")
+      date_menu
+      if @file_date.to_i <= @monday.to_i
+        get_menu
+      else
+        gen_menu
+      end
+    else
+      get_menu
+    end
+  end
+
+  def get_menu
+    system("rm #{@path}/#{@settings.url_menu.split('/').last}")
+    system("wget -P #{@path} #{@settings.url_menu}")
+    gen_menu
+  end
+
+  def date_menu
+    @file_date = File.mtime("#{@path}/#{@settings.url_menu.split('/').last}").strftime("%Y%m%d%H%M%S")
+    date = Date.today
+    @day = date.strftime("%Y%m%d%H%M%S")
+    while @monday.nil? do
+      date = date - 1
+      # define the monday date
+      if date.cwday == 1
+        @monday = date.strftime("%Y%m%d%H%M%S")
+      end
+    end
+  end
+
+  def gen_menu
+    date_menu
+    @file_menu = "#{@file_date}-menu.jpg"
+    if File.exist?("#{@path}/#{@file_menu}") == false
+      #system("convert -density 600 #{@path}/#{@settings.url_menu.split('/').last} #{@path}/menu.jpg")
+      system("convert -density 150 -quality 90 #{@path}/#{@settings.url_menu.split('/').last} #{@path}/#{@file_menu}")
+    end
+  end
 end
