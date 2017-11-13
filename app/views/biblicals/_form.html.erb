@@ -1,0 +1,27 @@
+<%= form_with(model: biblical, local: true) do |form| %>
+  <% if biblical.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(biblical.errors.count, "error") %> prohibited this biblical from being saved:</h2>
+
+      <ul>
+      <% biblical.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :citation %>
+    <%= form.text_area :citation, id: :biblical_citation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :source %>
+    <%= form.text_area :source, id: :biblical_source %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

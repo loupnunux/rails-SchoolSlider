@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Citation:</strong>
+  <%= @biblical.citation %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @biblical.source %>
+</p>
+
+<%= link_to 'Edit', edit_biblical_path(@biblical) %> |
+<%= link_to 'Back', biblicals_path %>

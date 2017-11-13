@@ -1,0 +1,2 @@
+class Biblical < ApplicationRecord
+end

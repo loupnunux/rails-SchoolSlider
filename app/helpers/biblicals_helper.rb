@@ -1,0 +1,2 @@
+module BiblicalsHelper
+end

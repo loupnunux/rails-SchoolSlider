@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :biblicals
   resources :saints
   devise_for :users
   resources :users

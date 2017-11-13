@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Biblicals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Citation</th>
+      <th>Source</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @biblicals.each do |biblical| %>
+      <tr>
+        <td><%= biblical.citation %></td>
+        <td><%= biblical.source %></td>
+        <td><%= link_to 'Show', biblical %></td>
+        <td><%= link_to 'Edit', edit_biblical_path(biblical) %></td>
+        <td><%= link_to 'Destroy', biblical, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Biblical', new_biblical_path %>

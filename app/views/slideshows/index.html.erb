@@ -1,4 +1,5 @@
-<meta http-equiv="refresh" content="<%= @slide_number * @settings.slider_interval * 30 %>">
+<!--<meta http-equiv="refresh" content="<%= @slide_number * @settings.slider_interval * 30 %>">-->
+<meta http-equiv="refresh" content="<%= @slide_number * @settings.slider_interval %>">
 
 <div class="slideshows">
   <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="<%= @settings.slider_interval %>000">
@@ -20,6 +21,12 @@
       <div class="item page active">
         <hgroup>
           <%= render partial: 'slideshows/welcome' %>
+        </hgroup>
+      </div>
+
+      <div class="item page">
+        <hgroup>
+          <%= render partial: 'slideshows/biblical' %>
         </hgroup>
       </div>
 
@@ -67,6 +74,12 @@
         </div>
       <% end %>
 
+      <div class="item page">
+        <hgroup>
+          <%= render partial: 'slideshows/learn' %>
+        </hgroup>
+      </div>
+
 
       <% @slides.each do |s| %>
         <% if (@day >= s.start.to_datetime) and (@day <= s.end.to_datetime) %>
@@ -91,5 +104,15 @@ $(document).ready(function(){
     // Activate Carousel
     $("#myCarousel").carousel({interval: <%= @settings.slider_interval %>000, pause: false});
 });
+</script>
+-->
+
+<!--
+<script>
+
+setTimeout(function(){
+   window.location.reload(1);
+}, <%= @slide_number * @settings.slider_interval * 1000 %>);
+
 </script>
 -->

@@ -205,3 +205,66 @@
   text-transform: initial;
   background-color: white;
 }
+
+
+
+
+
+.citation{
+  position: absolute;
+  top: 50%; /* poussé de la moitié de hauteur du référent */
+  transform: translateY(-50%);
+  margin-right: 18vw;
+  margin-left: 18vw;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 3vw;
+}
+
+.bible{
+  position: absolute;
+  bottom: 6vh;
+  left: 6vw;
+  z-index: 2;
+}
+
+.source_box{
+  position: absolute;
+  bottom: 8vh;
+  margin-left: 0vw;
+  width: 60vw;
+  padding: 1vh;
+  background-color: white;
+}
+
+.source_txt{
+  margin-left: 20vw;
+  text-align: left;
+  font-size: 2vw;
+}
+
+
+.bible_background {
+  position: absolute;
+  margin: 0%;
+  height: 100%;
+  width: 100%;
+  opacity: 0.4;
+  background-size: 100% 100%;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-image: url('/assets/bible.jpg');
+}
+
+
+.learn_background {
+  position: absolute;
+  margin: 0%;
+  height: 100%;
+  width: 100%;
+  opacity: 0.8;
+  background-size: 100% 100%;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-image: url('/assets/board.jpg');
+}

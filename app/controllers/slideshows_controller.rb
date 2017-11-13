@@ -5,6 +5,7 @@ class SlideshowsController < ApplicationController
     @events = Event.all.order(:start)
     @settings = Setting.all[0]
     @slides = Slide.all
+    @biblicals = Biblical.all
     @week = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi']
     @month = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre']
     @day = Time.now.strftime "%Y-%m-%d"
@@ -15,9 +16,6 @@ class SlideshowsController < ApplicationController
     if @settings.slider_birthday == true
       @slide_number += 1
     end
-    if @settings.slider_menu == true
-      @slide_number += 1
-    end
     if @settings.slider_meteo == true
       @slide_number += 1
     end
@@ -26,8 +24,11 @@ class SlideshowsController < ApplicationController
     check_slide
     check_saint
     if @settings.slider_menu
+      @slide_number += 1
       menu
     end
+    biblical_list
+    learn_list
   end
 
   def check_saint
@@ -105,5 +106,18 @@ class SlideshowsController < ApplicationController
       #system("convert -density 600 #{@path}/#{@settings.url_menu.split('/').last} #{@path}/menu.jpg")
       system("convert -density 150 -quality 90 #{@path}/#{@settings.url_menu.split('/').last} #{@path}/#{@file_menu}")
     end
+  end
+
+
+  def biblical_list
+    @slide_number += 1
+    bibli = @biblicals.to_a
+    @biblical = bibli[rand(0..(bibli.length) -1)]
+  end
+
+  def learn_list
+    @slide_number += 1
+    bibli = @biblicals.to_a
+    @biblical = bibli[rand(0..(bibli.length) -1)]
   end
 end
