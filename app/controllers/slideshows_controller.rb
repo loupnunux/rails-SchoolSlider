@@ -6,6 +6,7 @@ class SlideshowsController < ApplicationController
     @settings = Setting.all[0]
     @slides = Slide.all
     @biblicals = Biblical.all
+    @learns = Learn.all
     @week = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi']
     @month = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre']
     @day = Time.now.strftime "%Y-%m-%d"
@@ -117,7 +118,7 @@ class SlideshowsController < ApplicationController
 
   def learn_list
     @slide_number += 1
-    bibli = @biblicals.to_a
-    @biblical = bibli[rand(0..(bibli.length) -1)]
+    learn = @learns.to_a
+    @learn = learn[rand(0..(learn.length) -1)]
   end
 end

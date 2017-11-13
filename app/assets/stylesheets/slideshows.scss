@@ -106,8 +106,8 @@
 
 
 .meteo_img{
-  margin-right: 20%;
-  margin-left: 20%;
+  margin-right: 20vw;
+  margin-left: 20vw;
 }
 
 
@@ -212,8 +212,9 @@
 
 .citation{
   position: absolute;
-  top: 50%; /* poussé de la moitié de hauteur du référent */
+  top: 50%;
   transform: translateY(-50%);
+  width: 66vw;
   margin-right: 18vw;
   margin-left: 18vw;
   vertical-align: middle;
@@ -221,7 +222,7 @@
   font-size: 3vw;
 }
 
-.bible{
+.portrait{
   position: absolute;
   bottom: 6vh;
   left: 6vw;

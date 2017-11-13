@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag @learn.picture.url(:medium) %>
+
+<p>
+  <strong>Citation:</strong>
+  <%= @learn.citation %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @learn.source %>
+</p>
+
+<%= link_to 'Edit', edit_learn_path(@learn) %> |
+<%= link_to 'Back', learns_path %>
