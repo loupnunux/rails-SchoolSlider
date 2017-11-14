@@ -1,5 +1,6 @@
 class BiblicalsController < ApplicationController
   before_action :set_biblical, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /biblicals
   # GET /biblicals.json
