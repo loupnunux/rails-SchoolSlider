@@ -1,8 +1,8 @@
 class CreateLearns < ActiveRecord::Migration[5.1]
   def change
     create_table :learns do |t|
-      t.text :citation
-      t.text :source
+      t.text :quote
+      t.integer :author_id
 
       t.timestamps
     end

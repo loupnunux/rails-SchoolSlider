@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113215134) do
+ActiveRecord::Schema.define(version: 20171114214551) do
+
+  create_table "authors", force: :cascade do |t|
+    t.string "name"
+    t.string "birth"
+    t.string "death"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "picture_file_name"
+    t.string "picture_content_type"
+    t.integer "picture_file_size"
+    t.datetime "picture_updated_at"
+  end
 
   create_table "biblicals", force: :cascade do |t|
     t.text "citation"
@@ -31,14 +43,10 @@ ActiveRecord::Schema.define(version: 20171113215134) do
   end
 
   create_table "learns", force: :cascade do |t|
-    t.text "citation"
-    t.text "source"
+    t.text "quote"
+    t.integer "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "picture_file_name"
-    t.string "picture_content_type"
-    t.integer "picture_file_size"
-    t.datetime "picture_updated_at"
   end
 
   create_table "saints", force: :cascade do |t|

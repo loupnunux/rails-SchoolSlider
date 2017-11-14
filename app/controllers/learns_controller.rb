@@ -1,6 +1,5 @@
 class LearnsController < ApplicationController
   before_action :set_learn, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
 
   # GET /learns
   # GET /learns.json
@@ -70,6 +69,6 @@ class LearnsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def learn_params
-      params.require(:learn).permit(:citation, :source, :picture)
+      params.require(:learn).permit(:quote, :author_id)
     end
 end

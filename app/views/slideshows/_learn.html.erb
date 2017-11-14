@@ -2,17 +2,25 @@
   <div class="learn_background">
   </div>
 
-  <div class="citation">
-    <%= @learn.citation %>
+  <div class="quote">
+    <%= @learn.quote %>
   </div>
 
   <div class="portrait">
-    <img src="<%= @learn.picture.url(:full, timestamp: false) %>" style="height: 40%; width:40%;">
+    <img src="<%= @author.picture.url(:medium) %>">
   </div>
+
+
+  <% @authors.each do |a| %>
+    <% if (a.name == @author.name) %>
+      <%= a.picture.url(:medium) %>
+    <% end %>
+  <% end %>
+
 
   <div class="source_box">
     <div class="source_txt">
-      <%= @learn.source %>
+      <%= @author.name %> - <%= @author.picture.url(:medium) %>
     </div>
   </div>
 </div>

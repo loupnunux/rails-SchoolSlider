@@ -209,8 +209,19 @@
 
 
 
-
 .citation{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 66vw;
+  margin-right: 18vw;
+  margin-left: 18vw;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 3vw;
+}
+
+.quote{
   position: absolute;
   top: 50%;
   transform: translateY(-50%);

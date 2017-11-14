@@ -17,7 +17,7 @@ class LearnsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create learn" do
     assert_difference('Learn.count') do
-      post learns_url, params: { learn: { citation: @learn.citation, source: @learn.source } }
+      post learns_url, params: { learn: { author_id: @learn.author_id, quote: @learn.quote } }
     end
 
     assert_redirected_to learn_url(Learn.last)
@@ -34,7 +34,7 @@ class LearnsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update learn" do
-    patch learn_url(@learn), params: { learn: { citation: @learn.citation, source: @learn.source } }
+    patch learn_url(@learn), params: { learn: { author_id: @learn.author_id, quote: @learn.quote } }
     assert_redirected_to learn_url(@learn)
   end
 

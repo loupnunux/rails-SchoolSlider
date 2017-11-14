@@ -12,18 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :picture %>
-    <%= form.file_field :picture %>
+    <%= form.label :quote %>
+    <%= form.text_area :quote, id: :learn_quote %>
   </div>
 
   <div class="field">
-    <%= form.label :citation %>
-    <%= form.text_area :citation, id: :learn_citation %>
-  </div>
-
-  <div class="field">
-    <%= form.label :source %>
-    <%= form.text_area :source, id: :learn_source %>
+    <%= form.label :author_id %>
+    <%= form.collection_select :author_id, Author.order(:name), :id, :name, include_blank: true  %>
   </div>
 
   <div class="actions">
