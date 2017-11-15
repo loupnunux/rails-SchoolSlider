@@ -40,24 +40,6 @@
         </div>
       <% end %>
 
-      <% if @settings.slider_event %>
-        <div class="item event">
-          <hgroup>
-            <%= render partial: 'slideshows/event' %>
-          </hgroup>
-        </div>
-      <% end %>
-
-      <% if @settings.slider_birthday %>
-        <div class="item week_birthday">
-          <div class="birthday">
-            <hgroup>
-              <%= render partial: 'slideshows/week_birthday' %>
-            </hgroup>
-          </div>
-        </div>
-      <% end %>
-
       <% if @settings.slider_menu %>
         <div class="item page">
           <div class="menu">
@@ -68,10 +50,10 @@
         </div>
       <% end %>
 
-      <% if @settings.slider_meteo %>
-        <div class="item page">
+      <% if @settings.slider_event %>
+        <div class="item event">
           <hgroup>
-            <%= render partial: 'slideshows/meteo' %>
+            <%= render partial: 'slideshows/event' %>
           </hgroup>
         </div>
       <% end %>
@@ -97,10 +79,28 @@
         <% end %>
       <% end %>
 
+      <% if @settings.slider_birthday %>
+        <div class="item week_birthday">
+          <div class="birthday">
+            <hgroup>
+              <%= render partial: 'slideshows/week_birthday' %>
+            </hgroup>
+          </div>
+        </div>
+      <% end %>
+
       <% if @settings.slider_art %>
         <div class="item page">
           <hgroup>
             <%= render partial: 'slideshows/art' %>
+          </hgroup>
+        </div>
+      <% end %>
+
+      <% if @settings.slider_meteo %>
+        <div class="item page">
+          <hgroup>
+            <%= render partial: 'slideshows/meteo' %>
           </hgroup>
         </div>
       <% end %>
