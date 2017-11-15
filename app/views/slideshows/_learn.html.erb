@@ -6,9 +6,12 @@
     <%= @learn.quote %>
   </div>
 
-  <div class="portrait">
-    <img src="<%= @author.picture.url(:medium) %>">
-  </div>
+
+  <% if @author.picture_file_name.present? %>
+    <div class="portrait">
+      <img src="<%= @author.picture.url(:medium) %>" style="height:80%; width:80%;">
+    </div>
+  <% end %>
 
 
   <% @authors.each do |a| %>
@@ -20,7 +23,10 @@
 
   <div class="source_box">
     <div class="source_txt">
-      <%= @author.name %> - <%= @author.picture.url(:medium) %>
+      <%= @author.name.titleize %>
+      <% if @author.birth.present? %>
+        (<%= @author.birth %> - <%= @author.death %>)
+      <% end %>
     </div>
   </div>
 </div>

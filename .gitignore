@@ -26,6 +26,7 @@
 .byebug_history
 
 /public/system/slides/pictures/*
+/public/system/authors/pictures/*
 /public/assets
 /public/*-menu.jpg
 /public/*.pdf

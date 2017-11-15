@@ -46,6 +46,22 @@
   <% end %> Afficher les fêtes du jour
   <br>
 
+  <!-- Biblical -->
+  <% if @settings.slider_biblical == true %>
+    <input type="checkbox" name="slider_biblical" value='true' checked='checked' />
+  <% else %>
+    <input type="checkbox" name="slider_biblical" value='true' />
+  <% end %> Afficher les citations bibliques
+  <br>
+
+  <!-- Learn -->
+  <% if @settings.slider_learn == true %>
+    <input type="checkbox" name="slider_learn" value='true' checked='checked' />
+  <% else %>
+    <input type="checkbox" name="slider_learn" value='true' />
+  <% end %> Afficher les citations célèbres
+  <br>
+
   <!-- Menu -->
   <% if @settings.slider_menu == true %>
     <input type="checkbox" name="slider_menu" value='true' checked='checked' />

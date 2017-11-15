@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171114214551) do
+ActiveRecord::Schema.define(version: 20171115085831) do
 
   create_table "authors", force: :cascade do |t|
     t.string "name"
@@ -70,6 +70,8 @@ ActiveRecord::Schema.define(version: 20171114214551) do
     t.boolean "full_welcome"
     t.boolean "slider_meteo"
     t.text "meteo_code"
+    t.boolean "slider_biblical"
+    t.boolean "slider_learn"
   end
 
   create_table "slides", force: :cascade do |t|

@@ -29,8 +29,12 @@ class SlideshowsController < ApplicationController
       @slide_number += 1
       menu
     end
-    biblical_list
-    learn_list
+    if @settings.slider_biblical
+      biblical_list
+    end
+    if @settings.slider_learn
+      learn_list
+    end
   end
 
   def check_saint

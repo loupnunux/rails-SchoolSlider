@@ -24,11 +24,13 @@
         </hgroup>
       </div>
 
-      <div class="item page">
-        <hgroup>
-          <%= render partial: 'slideshows/biblical' %>
-        </hgroup>
-      </div>
+      <% if @settings.slider_biblical %>
+        <div class="item page">
+          <hgroup>
+            <%= render partial: 'slideshows/biblical' %>
+          </hgroup>
+        </div>
+      <% end %>
 
       <% if @list_saint.any? and @settings.slider_saint %>
         <div class="item saint">
@@ -74,12 +76,13 @@
         </div>
       <% end %>
 
-      <div class="item page">
-        <hgroup>
-          <%= render partial: 'slideshows/learn' %>
-        </hgroup>
-      </div>
-
+      <% if @settings.slider_learn %>
+        <div class="item page">
+          <hgroup>
+            <%= render partial: 'slideshows/learn' %>
+          </hgroup>
+        </div>
+      <% end %>
 
       <% @slides.each do |s| %>
         <% if (@day >= s.start.to_datetime) and (@day <= s.end.to_datetime) %>
