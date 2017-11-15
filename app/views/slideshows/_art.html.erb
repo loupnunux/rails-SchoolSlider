@@ -22,14 +22,14 @@
 
 
   <div class="source_box">
-    <span class="source_titre">
+    <div class="source_titre">
       <%= @art.titre.titleize %>
-      <span class="source_author">
-        &nbsp;&nbsp;<%= @art_author.name.titleize %>
+      <div class="source_author">
+        <%= @art_author.name.titleize %>
         <% if @art_author.birth.present? %>
           (<%= @art_author.birth %> - <%= @art_author.death %>)
         <% end %>
-      </span>
-    </span>
+      </div>
+    </div>
   </div>
 </div>
