@@ -23,9 +23,10 @@
 
   <div class="field">
     <%= form.label :class_room %><br>
-    <% @class_list.each do |cl| %>
+    <!--<% @class_list.each do |cl| %>
       &nbsp;&nbsp;&nbsp;<%= form.radio_button :class_room, cl, :checked => false %> <%= cl %><br>
-    <% end %>
+    <% end %>-->
+    <%= form.collection_select :class_room, @class_list, :to_s, :to_s, include_blank: false %>
   </div>
 
   <div class="field">

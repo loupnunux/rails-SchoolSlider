@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171115085831) do
+ActiveRecord::Schema.define(version: 20171115142209) do
+
+  create_table "arts", force: :cascade do |t|
+    t.string "titre"
+    t.integer "author_id"
+    t.string "typeart"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "picture_file_name"
+    t.string "picture_content_type"
+    t.integer "picture_file_size"
+    t.datetime "picture_updated_at"
+  end
 
   create_table "authors", force: :cascade do |t|
     t.string "name"
@@ -25,8 +37,8 @@ ActiveRecord::Schema.define(version: 20171115085831) do
   end
 
   create_table "biblicals", force: :cascade do |t|
-    t.text "citation"
-    t.text "source"
+    t.text "quote"
+    t.string "source"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -72,6 +84,7 @@ ActiveRecord::Schema.define(version: 20171115085831) do
     t.text "meteo_code"
     t.boolean "slider_biblical"
     t.boolean "slider_learn"
+    t.boolean "slider_art"
   end
 
   create_table "slides", force: :cascade do |t|

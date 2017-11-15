@@ -1,0 +1,35 @@
+<div class="art">
+  <div class="art_background">
+  </div>
+
+
+  <% if @art.typeart == 'tableau' %>
+    <div class="art_tableau">
+      <img src="<%= @art.picture.url(:large) %>" style="height:50vh">
+    </div>
+  <% elsif @art.typeart == 'statue' %>
+    <div class="art_statue">
+      <img src="<%= @art.picture.url(:large) %>" style="height:100vh">
+    </div>
+  <% end %>
+
+
+  <% if @art_author.picture_file_name.present? %>
+    <div class="portrait">
+      <img src="<%= @art_author.picture.url(:medium) %>" style="height:80%; width:80%;">
+    </div>
+  <% end %>
+
+
+  <div class="source_box">
+    <span class="source_titre">
+      <%= @art.titre.titleize %>
+      <span class="source_author">
+        &nbsp;&nbsp;<%= @art_author.name.titleize %>
+        <% if @art_author.birth.present? %>
+          (<%= @art_author.birth %> - <%= @art_author.death %>)
+        <% end %>
+      </span>
+    </span>
+  </div>
+</div>

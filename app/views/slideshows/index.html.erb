@@ -96,6 +96,14 @@
           </div>
         <% end %>
       <% end %>
+
+      <% if @settings.slider_art %>
+        <div class="item page">
+          <hgroup>
+            <%= render partial: 'slideshows/art' %>
+          </hgroup>
+        </div>
+      <% end %>
     </div>
 
   </div>

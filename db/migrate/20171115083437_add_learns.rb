@@ -28,5 +28,8 @@ class AddLearns < ActiveRecord::Migration[5.1]
   	Learn.create :quote => "L'art, mes enfants, c'est d'être absolument soi-même.", :author_id => '16'
   	Learn.create :quote => "I have a dream.", :author_id => '17'
   	Learn.create :quote => "Ne comptez pas les jours. Faites que chaque jour compte.", :author_id => '18'
+    Learn.create :quote => "La vie est un défi à relever, un bonheur à mériter, une aventure à tenter.", :author_id => '19'
+    Learn.create :quote => "La vie est une chance, saisis-la.", :author_id => '19'
+    Learn.create :quote => "Dans la vie, rien n'est à craindre, tout est à comprendre.", :author_id => '20'
   end
 end

@@ -70,6 +70,6 @@ class BiblicalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def biblical_params
-      params.require(:biblical).permit(:citation, :source)
+      params.require(:biblical).permit(:quote, :source)
     end
 end

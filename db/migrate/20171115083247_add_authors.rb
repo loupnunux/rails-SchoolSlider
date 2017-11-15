@@ -18,5 +18,7 @@ class AddAuthors < ActiveRecord::Migration[5.1]
     Author.create :name => 'Paul Verlaine', :birth => '1844', :death => '1896'
     Author.create :name => 'Martin Luther King', :birth => '1929', :death => '1968'
     Author.create :name => 'Mohamed Ali', :birth => '1942', :death => '2016'
+    Author.create :name => 'Mère Teresa', :birth => '1910', :death => '1997'
+    Author.create :name => 'Marie Curie', :birth => '1867', :death => '1934'
   end
 end

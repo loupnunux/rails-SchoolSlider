@@ -209,18 +209,6 @@
 
 
 
-.citation{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 66vw;
-  margin-right: 18vw;
-  margin-left: 18vw;
-  vertical-align: middle;
-  text-align: center;
-  font-size: 3vw;
-}
-
 .quote{
   position: absolute;
   top: 50%;
@@ -237,7 +225,7 @@
   position: absolute;
   bottom: 6vh;
   left: 6vw;
-  z-index: 2;
+  z-index: 4;
 }
 
 .source_box{
@@ -247,12 +235,17 @@
   width: 60vw;
   padding: 1vh;
   background-color: white;
+  z-index: 3;
 }
 
-.source_txt{
+.source_titre{
   margin-left: 20vw;
   text-align: left;
   font-size: 2vw;
+}
+
+.source_author{
+  font-size: 1.2vw;
 }
 
 
@@ -266,6 +259,7 @@
   background-position: top center;
   background-repeat: no-repeat;
   background-image: url('/assets/bible.jpg');
+  z-index: 0;
 }
 
 
@@ -279,4 +273,39 @@
   background-position: top center;
   background-repeat: no-repeat;
   background-image: url('/assets/board.jpg');
+  z-index: 0;
+}
+
+.art_background {
+  position: absolute;
+  margin: 0%;
+  height: 100%;
+  width: 100%;
+  background-size: 100% 100%;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-image: url('/assets/muse.jpg');
+  z-index: 0;
+}
+
+.art_tableau {
+  position: absolute;
+  opacity: 1;
+  height: 100%;
+  width: 100%;
+  margin-top: 10vh;
+  margin-bottom: 35vh;
+  text-align: center;
+  z-index: 2;
+}
+
+.art_statue {
+  position: absolute;
+  opacity: 1;
+  height: 100%;
+  width: 100%;
+  margin-top: 10vh;
+  margin-bottom: 0vh;
+  text-align: center;
+  z-index: 2;
 }

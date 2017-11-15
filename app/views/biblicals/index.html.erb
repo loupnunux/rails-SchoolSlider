@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Citation</th>
+      <th>Quote</th>
       <th>Source</th>
       <th colspan="3"></th>
     </tr>
@@ -14,7 +14,7 @@
   <tbody>
     <% @biblicals.each do |biblical| %>
       <tr>
-        <td><%= biblical.citation %></td>
+        <td><%= biblical.quote %></td>
         <td><%= biblical.source %></td>
         <td><%= link_to 'Show', biblical %></td>
         <td><%= link_to 'Edit', edit_biblical_path(biblical) %></td>

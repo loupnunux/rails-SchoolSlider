@@ -7,6 +7,7 @@ class SlideshowsController < ApplicationController
     @slides = Slide.all
     @biblicals = Biblical.all
     @learns = Learn.all
+    @arts = Art.all
     @authors = Author.all
     @week = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi']
     @month = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre']
@@ -34,6 +35,9 @@ class SlideshowsController < ApplicationController
     end
     if @settings.slider_learn
       learn_list
+    end
+    if @settings.slider_art
+      art_list
     end
   end
 
@@ -125,6 +129,13 @@ class SlideshowsController < ApplicationController
     @slide_number += 1
     learn = @learns
     @learn = learn[rand(0..(learn.length) -1)]
-    @author = @authors.find(@learn.author_id)
+    @learn_author = @authors.find(@learn.author_id)
+  end
+
+  def art_list
+    @slide_number += 1
+    art = @arts
+    @art = art[rand(0..(art.length) -1)]
+    @art_author = @authors.find(@art.author_id)
   end
 end

@@ -62,6 +62,14 @@
   <% end %> Afficher les citations célèbres
   <br>
 
+  <!-- Art -->
+  <% if @settings.slider_art == true %>
+    <input type="checkbox" name="slider_art" value='true' checked='checked' />
+  <% else %>
+    <input type="checkbox" name="slider_art" value='true' />
+  <% end %> Afficher les oeuvres d'art
+  <br>
+
   <!-- Menu -->
   <% if @settings.slider_menu == true %>
     <input type="checkbox" name="slider_menu" value='true' checked='checked' />

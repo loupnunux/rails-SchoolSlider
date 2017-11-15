@@ -17,6 +17,7 @@ class SettingsController < ApplicationController
     Setting.update slider_saint: params[:slider_saint]
     Setting.update slider_biblical: params[:slider_biblical]
     Setting.update slider_learn: params[:slider_learn]
+    Setting.update slider_art: params[:slider_art]
     Setting.update slider_menu: params[:slider_menu]
     Setting.update url_menu: params[:url_menu]
     Setting.update slider_meteo: params[:slider_meteo]

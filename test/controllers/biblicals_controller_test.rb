@@ -17,7 +17,7 @@ class BiblicalsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create biblical" do
     assert_difference('Biblical.count') do
-      post biblicals_url, params: { biblical: { citation: @biblical.citation, source: @biblical.source } }
+      post biblicals_url, params: { biblical: { quote: @biblical.quote, source: @biblical.source } }
     end
 
     assert_redirected_to biblical_url(Biblical.last)
@@ -34,7 +34,7 @@ class BiblicalsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update biblical" do
-    patch biblical_url(@biblical), params: { biblical: { citation: @biblical.citation, source: @biblical.source } }
+    patch biblical_url(@biblical), params: { biblical: { quote: @biblical.quote, source: @biblical.source } }
     assert_redirected_to biblical_url(@biblical)
   end
 

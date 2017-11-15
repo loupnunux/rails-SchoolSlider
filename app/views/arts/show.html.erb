@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag @art.picture.url(:medium) %>
+
+<p>
+  <strong>Titre:</strong>
+  <%= @art.titre %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <% if @art.author_id.present? %>
+    <td><%= Author.find(@art.author_id).name %></td>
+  <% else %>
+    <td>-</td>
+  <% end %>
+</p>
+
+<p>
+  <strong>Typeart:</strong>
+  <%= @art.typeart %>
+</p>
+
+<%= link_to 'Edit', edit_art_path(@art) %> |
+<%= link_to 'Back', arts_path %>
