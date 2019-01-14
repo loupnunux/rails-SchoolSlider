@@ -38,5 +38,5 @@ $ rails s
 
 
 ### Production - Docker
-Voir le depot docker-school_slider
+Voir le depot docker-school_slider : https://github.com/loupnunux/docker-school_slider
 
